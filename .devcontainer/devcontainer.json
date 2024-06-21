@@ -13,7 +13,10 @@
 		"--security-opt=seccomp:unconfined",
 		"--security-opt=apparmor:unconfined",
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-		"--volume=/mnt/wslg:/mnt/wslg"
+		"--volume=/mnt/wslg:/mnt/wslg",
+		"--ipc=host"
+		// uncomment to use intel iGPU
+		// "--device=/dev/dri"
 	],
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
@@ -27,8 +30,10 @@
 		"vscode": {
 			"extensions": [
 				"althack.ament-task-provider",
+				"betwo.b2-catkin-tools",
 				"DotJoshJohnson.xml",
 				"ms-azuretools.vscode-docker",
+				"ms-iot.vscode-ros",
 				"ms-python.python",
 				"ms-vscode.cpptools",
 				"redhat.vscode-yaml",
@@ -36,8 +41,7 @@
 				"streetsidesoftware.code-spell-checker",
 				"twxs.cmake",
 				"yzhang.markdown-all-in-one",
-				"zachflower.uncrustify",
-				"betwo.b2-catkin-tools"
+				"zachflower.uncrustify"
 			]
 		}
 	}
